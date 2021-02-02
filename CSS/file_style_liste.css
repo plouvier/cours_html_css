@@ -1,0 +1,32 @@
+body
+{
+	background-color: #EEE;
+	margin:auto;
+	width:1000px;
+}
+
+/* 
+Pour styliser notre liste nous utiliserons les balise li
+une première propriété c'est list-style-image qui va servir remplacer les puces par une
+image au format png ou svg.
+On va aussi pouvoir choisir la position (le comportement de la puce par rapport a
+l'élément de la liste )avec la propriété liste-style-position.
+
+*/
+
+li
+{
+	list-style-image:url(images_videos_sons/val.jpg);
+	list-style-position:outside;/*inside*/
+	/*list-style-type:square;*//*none,disc,square,circle,armenian,georgian,lower-latin,lower-greek,hiragana,katakana...*/
+}
+
+/* Les 3 propriétés peuvent se résumé en une seul méta-propriété
+
+li
+{
+	liste-style:square inside url(puce2_.png);
+}
+
+*/
+

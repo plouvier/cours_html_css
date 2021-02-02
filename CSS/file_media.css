@@ -1,0 +1,101 @@
+body
+{
+	background-color: #EEE;
+}
+
+/* max-width 100% et height auto rend l'image adaptative au média.*/
+img
+{
+	max-width:100%;
+	height:auto;
+}
+
+.container
+{
+	display:grid;
+	grid-template-columns: auto minmax(150px, 300px);
+	grid-template-areas:"entete entete"
+						"principal barre"
+						"pied pied";
+}
+
+header
+{
+	grid-area:entete;
+}
+
+section,aside
+{
+	padding:20px;
+}
+
+section
+{
+	background-color:#DDD;
+	grid-area:principal;
+}
+
+aside
+{
+	background-color:#AAA;
+	grid-area:barre;
+}
+
+footer
+{
+	grid-area:pied;
+}
+
+/* Pour s'occuper des média on va faire des rêquetes media avec @media avec entre parenthèse
+une/des conditions puis on met des crochet et on mettra le css voulu dans ces crochets.
+Ce n'est pas encore du design addaptative mais c'est un début.
+Les rêquetes média peuvent prendre en compte un type de périphérique
+"all" prend tout les périphériques "screen" prend en comptes les écrans
+"speech" prend en compte les outils de synthèse vocal
+"print" prend en compte les aperçu avant impression on peu aussi utiliser des opérateur comme and, not, only.
+On voit souvent ce qu'on appelle des points de rupture qui correspondent à différentes résolutions en pixcel
+à chaque point de rupture on aura un comportement différent de notre css (très bonne méthode)
+pour choisir les points de ruptures c'est parfois fait par défaut avec un framework mais
+sinon vous aurez à tester en jouant avec la resolution d'une feêtre de nav sur votre ordi
+*/
+
+@media(max-width:600px)
+{
+	body
+	{
+	background-color: #BBB;
+	color:blue;
+	}
+	
+	.container
+	{
+		display:grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:"entete"
+							"principal"
+							"barre"
+							"pied";
+	}
+
+	
+}
+
+
+
+@media screen and (max-width:600px){}
+@media screen and (max-width:768px){}
+@media screen and (max-width:992px){}
+@media screen and (max-width:600px){}
+@media screen and (max-width:1024px){}
+
+/*
+en général
+
+smartphone jusqu'à 568px (xs)
+après on a 768px (sm)
+après on a 992px (md)
+après on a 1024px (lg)
+après on a 1280px (xl)
+
+
+*/

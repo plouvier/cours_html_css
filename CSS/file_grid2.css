@@ -1,0 +1,49 @@
+/* J'ai fait un deuxième tableau pour ne pas tout mélanger 
+
+on va maintenant voir les propriétés grid-area et grid-template-area, la première propriété
+va nommé nos partie et la deuxième sert à disposé ces parties
+ici header s'appelera entete section s'appelera principal ...
+ensuite on va disposé nos sections selon une grille. la propriété fonctionne avec
+un espace entre chaque colonne et un saut de ligne entre chaque ligne.
+(ici entete est en première ligne et en colonne une, 2 et 3 principal est en 2ème ligne
+1ère colonne, lateral en 2ème ligne 3ème colonne et foot en 3ème ligne et colonne 1, 2 et 3.)
+On pourra rajouter un élément vide entre principal et latéral avec un point, mais dans
+ce cas il ne faut pa oublié de rajouter un troisième entete et foot.
+*/
+
+.container
+{
+	border: 2px dashed #aa5230;
+	/*height: 500px;
+	width:800px;*/
+	display:grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: 1fr 25px 1fr;
+	grid-template-areas:"entete entete entete"
+						"principal . lateral"
+						"pied pied pied";
+	
+}
+
+
+.item
+{
+	border:1px solid #221fb3;
+	background-color: #386ccc;
+	color: #FFF;
+	font-weight: bolder;
+	padding:10px;
+}
+/*
+.iF2
+{
+	grid-row-start:2;
+	grid-row-end:4;
+}
+*/
+
+header{grid-area:entete;}
+section{grid-area:principal;}
+aside{grid-area:lateral;}
+footer{grid-area:pied;}
+

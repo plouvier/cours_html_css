@@ -1,0 +1,65 @@
+/*
+Pour le fond on va utiliser le fond avec la propriété background-color ou background-image
+on peut aussi gérer lepositionnement de l'image de fond avec background-position soit en
+px soit en % soit avec des indications(top,bottom...)
+pour qu'il n'y ai qu'une image qui ne se répète pas on peut utiliser la propriété
+background-repeat
+on peut gérer la taille du fond avec background-size et notamment cover qui étant 
+le fond et s'adapte à la fenêtre de nav on a aussi contain qui va s'adapter pour 
+que l'image soit tout le temps dans sa totalité.
+il y a des propriétés qui permettent de gérer l'espacement dans le contenue
+(background-origin ou background-clip).
+Il y a 3 types d'espacements
+le padding (marge exterieur, voir un autre fichier)
+border (qui va considérer la bordure du contenue)
+contain (qui va considérer l'intérieur du contenue)
+On va pouvoir choisir comment se comporte le fond quand on scrool avec la propriété
+background-attachment (local, scroll, fixed ...)
+*/
+
+
+body
+{
+	
+	/*background-color:#DDD;*/
+	background-image:url(images_videos_sons/fond.jpg);
+	/*background-image:url(butt.png);*/
+	background-position: 25px 25px;
+	background-repeat:no-repeat; /* repeat-x, repeat-y, space, round*/
+	background-origin: padding-box; /* border-box,content-box*/
+	background-size: cover;
+	background-attachment:local;
+	margin:auto;
+	width:600px;
+}
+
+
+
+/*
+Il existe plusieur manière pour gérer les couleurs.
+On a déja des code couleurs qu'on retrouve sur ce lien 
+https://www.w3schools.com/colors/colors_picker.asp
+ces couleurs peuvent s'écrire par leur nom, un code hexadecimal ou en rgb ou rgba.
+pour certaines couleurs simple il existe une écriture raccourcis (#000 #FFF)
+On peut aussi régler la teint la saturation et la luminosité d'une couleur avec hsl.
+*/
+.modif_p
+{
+	color:rgb(255,0,0,0.7);
+	/*color: hsl(0,0,0);*/
+}
+
+/* encore une fois toute les propriété de background peuvent se regroupé dans une méta-
+propriété nommé background (ne marche pas toujours, ne pas faire)*/
+
+/*
+body
+{
+	background: url(butt.png);
+}
+*/
+
+
+
+
+

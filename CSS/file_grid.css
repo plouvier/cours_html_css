@@ -1,0 +1,111 @@
+
+/* 
+Grid au contraire de flexbox est bi-dimensionnelle, ce qui va facilité les choses.
+Un système de grille (grid) va fonctionner comme un tableau avec des lignes et des colonnes.
+avec le display grid le containerest remplis par défaut.
+on va d'abord définir les dimension des colonnes et des lignes de notre grid avec les 
+propriétés grid-template-columns/grid-template-rows (une valeur par ligne/colonne)
+avec un grid à 6 éléments F et H apparaise quand même mais ne font pas partie de 
+la grid réellement. si on remplace lesmesure en px par auto le container va se remplir
+de manière équitable automatiquement (ne s'adapte pas à la taille dela fenêtre de navigation.
+On va pouvoir faire en sorte que le navigateur gère les dimensions de manière dynamique
+avec la modalité 1fr qui veut dire une zone libre ici on met un repeat pour dire (1fr 1fr 1fr).
+On pourras aussi utiliser min-content pour que la cellule utilise le moins de place possible
+(aller à la ligne si possible) et max-content pour utiliser le plus de place possible
+(donc ne va pas à la ligne).
+On va aussi avoir la modalité fit-content(px) qui va utiliser l'espace nécessaire, donc
+le moins d'espace possible sans aller à la ligne sauf si celle-ci dépasse le nombre
+de pixel mis entre parenthèse. (si on met 2 mot et que cela fait juste au dessus du nombre
+de pixel il va aller à la ligne mais laisser quand même un espace inutile après le premier mot*).
+
+on pourra aussi utilisé la modalité minmax(px px ) pour stipuler un valeur minimum et maximum
+pour notre colonne. (faire minmax(min-content max-content) est une bonne solution.
+On va aussi pouvoir adapté les dimensiondes ligned/colonnes qui n'ont pas de dimension définit
+avec les propriété grid-auto-rows/grid-auto-columns. Il y a aussi la propriété grid-auto-flow
+qui va gérer les éléments non-définis dans le grid est les empilé sur une ligne par défaut
+avec la modalité row, la modalité columns va empilé sur une colonne.
+on va aussi pouvoir forcer certaine cellules à être à une position précise (exemple première colone 
+avec grid-column:1;)
+cela peut créer des espace vide attention.
+Si vous voulez que la cellule utilise un ligne complete vous mettez un 1/-1
+le placement des cellules avec les grid-column et grid-row est assez complexe
+n'hésitez pas à faire plein de test pour bien comprendre (car ce n'est pas toujours 
+logique*)
+
+Donc on a aussi les prorpiété grid-column-start|grid-column-end et grid-row-start|grid-row-end
+pour définir clairement à quel ligne et colonne commence et finis un élément.
+On aura la méta-propriété grid-template qui regroupe grid-template-row and grid-template-column
+(d'abord les lignes puis les colonnes avec parfois un slash entre les 2)
+
+Avec alignement et justify on va pouvoir déplacer toute la grille ou juste un colonne ou
+une ligne ou juste un élément. 
+on a donc la propriété justify-content qui va gérer le positionnement de toute la grille
+(par defaut start il y a aussi end, stretch, center, between, around, space-evenly 
+(comme pour fletch-box))
+Pour l'alignement vertical on aura la même chose avec la propriété align-content.
+la méta-propriété place-content reprend les 2 avec en premier align-content (pas toujours
+pris en compte par le navigateur)
+On peut faire les mêmesopération uniquement sur les items avec align-items et justify-items
+avec align-item:start; on va voir un espace ce créer mais il faut bien comprendre que
+la cellule fait toujours la même taille c'est juste que l'élément c'est mis au début de
+celle-ci est ne prend pas toute la plce de celle-ci.
+et pour les 2 propriétés en même temps on utilise place-items.
+enfin pour un élément en particulier on peut aussi gérer sa dispositio avec les propriétés
+align-self et justify-self (pour voir cette exemple décmmenter le align-self et commenter 
+le align-items)
+enfin on peut gérer les espacement entre les ligne et les colonnes avec les propriétés
+grid-column-gap: px et grid-row-gap: px et les 2 ensembles grid-gap: px px
+cela pourra être remplacer par juste column-gap|row-gap|gap
+cela s'utilise dans le container mais cela pourra aussi s'utiliser dans les flexbox
+(la propriété flex-order peut aussi s'utiliser pour les grid avec juste order.)
+
+(petit detail à savoir on peut nommer les tracks(les tracks sont les valeurs mises dans 
+grid-template)
+La méta-propriété grid regroupe énormement de chose il est conseillé de ne pas l'utiliser)
+*/
+body
+{
+	background-color: #EEE;
+}
+
+.container
+{
+	border: 2px dashed #aa5230;
+	height: 500px;
+	width:800px;
+	display:grid;
+	grid-template-columns: fit-content(142px) 100px 100px;  /*repeat(3, 1fr); min-content 1f 1fr*/
+	grid-template-rows: 150px 150px;
+	grid-auto-rows: 50px;
+	justify-content:end;
+	align-content:start;
+	/*align-items:start;*/
+	/*place-content: center center;*/
+	/*grid-auto-flow:column;*/
+	/*grid-gap:20px 20px;*/
+	
+}
+
+
+.item
+{
+	border:1px solid #221fb3;
+	background-color: #386ccc;
+	color: #FFF;
+	font-weight: bolder;
+	padding:10px;
+}
+
+.iF
+{
+	grid-column:1/-1;
+}
+
+.iD
+{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	/*align-self:center;*/
+}
+
+

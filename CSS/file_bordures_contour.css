@@ -1,0 +1,97 @@
+/* revoir le schéma 
+margin: auto sert à centrer facilement.
+les bordures entourent les padding 
+border : width style color,
+	border-width;
+	border-style: dotted|dashed|double|groove|ridge|inset|outset
+	border:color
+
+on peut appliquer le border qu'à un coté en mettant border-top par exemple
+on peut aussi appliquer des motif à notre bordure.
+on utilise pour ça la propriété border-image : source slide width outset repeat
+
+Enfin pour gérer des arrondies on va avoir la méta-propriété border-radius.
+(order : haut gauche puis haut droit puis bas droite puis bas gauche)
+Cette méta-propriété ce décline 4 propriété une par coins (border-top-left-radius,
+border-top-right,...)
+
+on a aussi la propriété outline qui est une bordure extérieur, parfois il y en a 
+un par defaut dans le navigateur (ne pas oublier de le mettre à none dans ce cas là.)
+on pourra mettre un écart entre la bordure et le outline avec la propriété
+outline-offset : distance en px.
+
+
+*/
+html
+{
+	background-color:#FFF;
+	
+}
+
+body,div,p,table
+{
+	margin:auto;
+}
+
+body
+{
+
+	background-color:#DDD;
+	width:800px;
+	border:5px solid #3783e7;
+	border-radius:10px;
+	outline:2px dashed green;
+	outline-offset: 4px;
+	/* exemple de bordure fait par générateur 
+	border-style: solid;
+	border-width: 85px 85px 72px 93px;
+	-moz-border-image: url(puce2.png) 850 repeat repeat;
+	-webkit-border-image: url(puce2.png)850 repeat repeat;
+	-o-border-image: url(puce2.png) 850 repeat repeat;
+	border-image: url(puce2.png) 850 repeat repeat;
+	*/
+}
+	margin-top:25px;
+}
+div
+{
+	background-color:#888;
+	max-width:600px;
+	width:600px;
+	margin-top:25px;
+	margin-bottom:25px;
+	padding:5px;
+}
+
+p
+{
+	background-color:#c76f6f;
+	width:400px;
+	height:30%;
+	padding:10px;
+	text-align:justify;
+	overflow:auto;
+}
+
+
+/* on va aussi très souvent utiliser les border pour les tableaux.
+on aura la propriété border-collapse pour décidé si on met un espace blanc
+entrechaque cellule (separate par defaut ou collapse sinon)
+
+
+*/
+
+table,td,th
+{
+	border:1px solid #000;
+	border-collapse: separate;
+	border-spacing:2px;
+	
+}
+
+td,th
+{
+	padding:10px;
+}
+
+

@@ -1,0 +1,49 @@
+/* 
+Petite précision qui n'étais pas fait jusque là. Les balises <body> <html> ou <div> sont des block
+(puisqu'elle va former un block) au contraire des balises comme <span>
+<img> ou <a> ... qui sont des balises in line.
+Dans un premier tempson ne vois pas toutes les boites car nous n'avons pas définit les
+dim de chaque boite donc certaine se confonde. on va doc rajouter width.
+On a donc le html en blanc le body en gris claire, le div en gris foncé et le p en rouge.
+on peut aussi spécifier des hauteurs avec height.
+on pourra spécifier de valeurmin et max (min-width ou max-width)
+Voir l'image mofele_box.png
+Pour la propriété padding on va déjà pouvoir différencier 4 padding (top,bottom,left,right)
+(peut être condenser en une métapropriété padding)
+le padding est une marge interne à l'élément mais on peut mettre une marge externe
+avec le mot margin à la place de padding.
+Pour éviter des problèmes de dépassement de boite (s'il y a un url où un mot à rallonge)
+on va utiliser overflow (auto,hidden,scroll). Peut être décliner en overflow-x et
+overflow-y. 
+On pourra ausi utiliser overflow-wrap avec break-word pour couper le mot et aller à la ligne.
+*/
+
+html
+{
+	background-color:#FFF;
+	
+}
+
+body
+{
+	background-color:#DDD;
+	width:800px;
+}
+div
+{
+	background-color:#888;
+	max-width:600px;
+	width:600px;
+	height:400px;
+}
+
+p
+{
+	background-color:#c76f6f;
+	width:400px;
+	height:30%;
+	padding-top:25px;
+	margin-left:60px;
+	overflow:auto;
+}
+

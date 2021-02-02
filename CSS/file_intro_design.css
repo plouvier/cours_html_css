@@ -1,0 +1,103 @@
+/* Un commentaire en css 
+
+css peut identifier tout éléments html, il va utiliser pour cela un selecteur.
+on peut le faire sur un élément directement avec son nom.
+Ici on aura des propriétés associé aux balises p qui prendront des valeurs.
+On peut voir aussi qu'une propriété peut avoir plusieurs valeurs.
+on met un ; à la fin de chaque propriété
+*/
+
+p
+{
+	/*
+	<propriété>:<valeur>;
+	<propriété>:<valeur>;
+	<propriété>:<valeur>;
+	<propriété>:<valeur>;
+	*/
+	front-variant:small-caps;
+}
+
+body
+{
+	background-color: #DDD;
+	margin:auto;
+	width:1000px;
+	border: 3px solid red;
+}
+
+/*
+Si on veut faire appliquer un style mais pas sur tout nos paragraphes <p> mais
+plutôt un élément en particulier, pour cela on va utiliser l'attribut id
+sur la balise que l'on veut identifier (on rappel qu'un id doit être unique).
+Donc pour appliquer un style juste sur un élément on va faire utiliser # puis l'identifiant
+concerné. Vous pouvez aussi préciser sur quel type de balise est cet identifiant en 
+mettant la balise juste avant (ici div)
+*/
+
+div#block
+{
+	background-color: #FFF;
+	border:1px solid #000;
+	border-radius:8px;
+}
+
+/*
+on peut aussi appliquer un style à toute une classe de balise avec l'attribut class
+qui ira sur les balise concernées. Puis dans le css on mettra la balise.le nom de la classe
+
+On pourra même préciser que l'on veut ce style uniquement pour les balises span
+de la class text-red mais qui sont dans des balises p pour cela on rajoute p devant
+avec un espaceentre les 2 balises
+*/
+
+p span.text-red
+{
+	color: red;
+}
+
+/* Il y aurra un tuto special sur les selecteurs pour en voir plus, (toute les
+propriétés et valeurs de celles-ci ne sont pas à connaitre pour l'instant elles
+sont là pour montrer comment fonctionne le css).
+On pourra aussi appliqué un style à certain attributs ! en utilisant des crochets derrière
+la balise est des attributs dans ces crochets */
+
+p[title="attrib"]
+{
+	color: blue;
+}
+/* Il faut aussi savoir que le css est lu de manière séquentielle, c'est à dire que si
+j'attribut un nouveau style à un élément pour lequel j'avait déjà attribué un style
+alors ce sera le dernier style du fichier css qui ser retenue (exception le style écrit
+sur le fichier html sera pris en compte en dernier), exemple ici
+la balise p de titre "attrib" aura la couleur verte*/
+
+p[title="attrib"]
+{
+	color: green;
+}
+
+/* On peut aussi "factoriser" des propriétés c'est à dire que si une propriété
+a plusieurs fois la même valeur pour plusieur balises on peut écrire cela comme suit*/
+
+body,header,footer{margin:auto;}
+
+/* ici on aura donc la marge qui sera auto pour les 3 parties (cela est préférable car moins
+lourd en terme de taille de fichier). Plus les fichier html et ccs sont lourd plus 
+le site mettra du temps à charger. Il existe par ailleurs des moyens pour mettre en cache 
+certain contenu css (par le navigateur ou par le créateur du fichier css).
+mettre en cache : le truc mis en cache est charger une fois (long) puis il rechargera le truc
+déjà existant (rapide).
+(plus il y a de fichier css plus il y a de requête http donc on essaye d'éviter.)
+
+
+Par ailleurs les navigateurs on un style par défaut (pas le même selon le navigateur)
+pour éviter d'avoir des changement selon le navigateur il faudra charger un fichier css
+dit de "reset" qui va servir à partir sur les mêmes bases peu importe le navigateur.
+il faudra charger le fichier "reset" juste avant son fichier css
+ */
+
+
+
+
+

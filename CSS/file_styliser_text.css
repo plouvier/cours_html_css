@@ -1,0 +1,42 @@
+
+/*
+Plusieur propriété ont souvent la valeur normal pour pouvoir enlevé des style fait par defauts
+on va d'abord voir la propriété font-style qui va changer le style de notre texte
+(italic, gras)
+on a aussi la propriété font-variante  avec small-caps pour mettre en maj (mais il y a
+toujour une diff entre minuscule et majuscule.)
+pour mettre du texte en gras on peut utiliser la propriété font-weigth avec bold ou bolder
+comme modalité. On pourra aussi utiliser la modalité lighterpour avoir un texte
+normal ou moins épai que normal. (peut être moduler de 100 à 900)
+on utilisera la propriété font-size pour la taille de la police
+en pixel avec px, en pourcentage (100% est la taille normal ) ou en em qui va être relatf selon 
+la balise parente ou rem si relatif à la balise parente de la parente.
+on pourra avoir des levels (xx-small,x-small,small,medium,large,x-large,x-large)
+on va ensuite régler l'espacement entreles ligne avec la propriété line-height
+avec les modalité (normal,15%,em,3px...)
+On pourra changer la police de caractère avec la propriété font-family. Si l'ordi qui regarde
+votre site ne peut lire votre police, une police peu être proposer par defaut au navigateur.
+(serif,sans-serif,monospace,Arial,cursive,Calibri)
+*/
+p.modif_p
+{
+	font-style: italic;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	font-family:Calibri, sans-serif;
+}
+
+/* Toutes les propriétés vu au dessus peuvent se résumé en une méta-propriété font.
+(ici ça ne marche pas ce n'st pas expliqué)
+
+*/
+
+p.meta_prop
+{
+	font:italic small-caps bold 12px 15px Calibri;
+}
+
+
+

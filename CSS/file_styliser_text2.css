@@ -1,0 +1,73 @@
+
+/* On utilise la propriété text-dcoration pour comme son nom l'indique décorer le texte
+,ligne au-dessus/sur/sous(overline/line-through/underline) le texte, 
+on peut aussi mettre une ombre au text grace à la propriété text-shadow avec ensuite 
+une valeur de positionnement horizontal et une vertical de l'ombre 
+puis une valeur de dspersion de l'ombre puis une couleur de l'ombre
+on va pouvoir aussi transformer le texte avec text-transform qui pourra prendre comme 
+valeur none,capitalize(1er lettre de chaque mot en maj), uppercase, lowercase.
+On va ensuite s'occuper de l'alignement de notre text avec text-align qui par defaut
+est à left  on pourra le mettre à right ou center ou justify.
+On pourra aussi gérer l'alignement verticale avec vertical-align (en px ou en em ou avec 
+bottom, top, sub, super)
+On va maintenant modifier l'indentation de notre text avec text-indent (en px en % en em)
+On va pouvoir tronquer un text s'il dépasse du block avec text-overflow qui peut prendre
+la valeur clip ou ellipsis.
+on peut aussi préciser un alignement special pour la dernière ligne de notre texte
+avec la propriété text-align-last.
+
+*/
+ 
+ 
+ 
+p.modif_p
+{
+	/*text-decoration-line:underline;
+	text-decoration-color:;
+	text-decoration-style:; (pascompatible avec edge) */
+	text-decoration:underline rgb(113,0,0);
+	text-shadow:2px 2px 5px #bb2d2d;
+	text-transform:capitalize;
+	text-align: justify; /* fonctionne avec les images */
+	/*text-align-last:right;*/
+	vertical-align: baseline; /* pas de changement visible là */
+	text-indent: 15px;
+	text-overflow: ellipsis;
+}
+
+/* On va aussi pouvoir modifier des caractère et des mots
+on va pouvoir modifier l'espacement des caractères en px avec letter-spacing.
+on va aussi pouvoir gérer les espace blanc avec white-space avec les modalités
+normal,nowrap(permet de dépasser la marge du bloque)
+On pourra utiliser aussi la modalité pre pour garder l'affichage du code dans le paragraphe)
+(on aura aussi pre-line et pre-wrap)
+On aura aussi word-spacing pour gérer l'espacement entre les mots.
+On pourra gérer la coupure des mot quand celui-ci arrive à la marge du block par
+exemple la modalité break-all coupera tout les mots (très moche te pas recommandé)
+on peut changer la direction de l'écriture visuellement seulement avec la propriété
+direction (modalité:initial,ltr,rtl)(un peu comme text-align j'ai l'impression)
+
+*/
+
+p.meta_prop
+{
+	letter-spacing: 3px;
+	word-spacing:4px;
+	word-break: break-all;/*keep-all ne coupe rien*/
+	word-wrap:break-word;/*utile surtout pour couper les url*/
+	/*white-space:nowrap;*/
+	direction:rtl;
+	
+}
+
+
+body
+{
+	margin:auto;
+	width:500px;
+}
+
+
+
+
+

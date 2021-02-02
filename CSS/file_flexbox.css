@@ -1,0 +1,123 @@
+/* 
+
+flexbox est le plus souvent utiliser pour gérer l'organisation particulière d'une
+section (plusieurs petits éléments à petite échelle). Avec notamment des conteneurs (flexible).
+Flexbox ne fonctionne que dans une direction à la foix (horizontal ou verticale)
+(voir schéma). Pour utiliser flexbox on va commencer par changer la méthode d'affichage
+sur le conteneur avec le display flex. On va pouvoir maintenant changer plein de comportement
+soit sur le conteneur soit sur les objets d'un conteneur.
+on va d'abord s'occuper de la direction du conteneur avec flex-direction
+flex-direction:row|column|row-reverse|column-reverse;
+
+soit par ligne soit par colonne ou en inversant le sens.
+comme on est que sur une direction à la fois tout est sur la même ligne ou colonne
+et quand ça dépasse cela ramène une barre de scroll. Mais on peut quand même répartir
+sur plusieurs ligne avec la propriété flex-wrap:nowrap|wrap|wrap-reverse;
+flex-flow regroupe flex-direction et flex-wrap.
+
+on va maintenant s'occupé de l'alignement (principal) avec la propriété 
+justify-content: flex-start|center|space-between|space-around|space-evenly
+le premier élément commence au début du contenaire|les élements sont centrer dans le
+contenaire| il y a des espace entre les éléments |il y a aussi des espace avant et 
+après le premier et le dernière éléments|les espaces sont égaux.
+
+pour l'alignement secondaire on va utiliser la propriété align-items (le nom est trompeur
+cela s'applique biens sur le conteneur pas les éléments).
+align-items :flex-start|flex-end|center|stretch(la hauteur des éléments au conteneur)|
+baseline|(pas bien expliqué); 
+
+*/
+
+/*PARTIE 1*/
+
+body
+{
+	background-color:#EEE;
+	margin:auto;
+	width:100%;
+}
+
+.container
+{
+	background-color:rgb(113,155,245);
+	display:flex; 
+	height:100px;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content: flex-start;
+	align-items:flex-start;
+	
+}
+
+.cont-item
+{
+	background-color:rgb(241,131,131);
+	border:1px solid #000;
+	
+}
+
+
+
+
+/*PARTIE 2*/
+
+/*on va maintenant travailler sur le contenue, sur les éléments.(passer le code au dessus
+en commentaire pour continuer.
+On va d'abord voir l'ordre des éléments avec la propriété order plus l'indice est petit
+plus vous apparaissez en premier.
+*/
+
+/* on s'intéresse ensuite à la gestion de l'espace dans le conteneur par defaut ils utilisent
+le moins d'espace possible.
+On va gérer l'agrandissement de l'élément en fonction des autre élément et en fonction de
+l'espace restante avec la propriété flex-grow avec un index qui coorespond à l'espace
+utiliser en fonction des autres éléments (si sur 3 éléments ont à 1,1,2 comme index 
+alor le troisième va prendre 2 fois plus de place que les 2 premier)
+
+le flex-shrink gère le rétressissement et va de paire avec le flex-grow (il fonctionne
+un eu pareil mais c'est très flou j'ai rien capté)
+
+Le flex-basis sert quant à lui à gérer la taille original de l'élément en pixel
+
+avec flex on regroupe les propriétés flex-grow flex-shrink et flex-basis
+
+On va voir l'alignement d'un élément en fonction des autres avec la propriété
+align-self:flex-start|flex-end|center|stretch|baseline
+
+*/
+
+.order1
+{
+	order:1;
+	flex-basis:200px;
+}
+
+.order2
+{
+	order:2;
+	flex-grow:1;
+}
+
+.order3
+{
+	order:3;
+	flex-grow:2;
+	align-self:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
