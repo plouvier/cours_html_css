@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Audio et Video</title>
+
+</head>
+<body>
+
+<!--
+Pour l'audio on va avoir 3 format possible
+
+du mp3 compatible partout
+du wav compatible partout sauf internet exploreur
+du ogg compatible sauf internet exploreur et safari
+
+Pour la video on va avoir 3 format aussi
+
+du mp4 compatible partout
+du webm compatible partout sauf internet exploreur et safari
+du ogg compatible partout sauf internet exploreur et safari
+
+
+Pour mettre un fichir audio on va utiliser la balise audio on pourra soit mettre 
+le chemin du fichier dans l'attribut src soit utiliser la balise <source> à la place. 
+
+l'attribut controls dans audio permet d'avoir les controles du son (son et le volme)
+l'attribut autoplay permet de lancer le son dès le chargement de la page
+l'attribut muted permet de couper le son par défaut
+l'attribut loop permet une lecture en boucle
+l'attribut preload qui permet de précharger ou non le fichier. none(pas de préchargement)
+,auto(préchargement total), metadata (ne va charger que les metadonnées, il chargera
+le reste quand l'utilisateur essayera de lancer le son.)
+l'attribut volume qui va définir à quel volume on veut mettre notre son (100% du volume
+ou moins)
+les attributs volume et autoplay sont rarement pris en compte pas les navigateurs
+car trop chiant pour les utilisateurs.
+-->
+
+<!--
+	<h1>Sons et vidéos</h1>
+
+	<audio  src="age_villageois.mp3" controls preload="metadata" volume="0.2">
+		Votre navigateur ne supporte pas l'audio
+	</audio>
+	
+	
+	<h1>Sons et vidéos</h1>
+
+	<audio controls preload="metadata">
+		<source src="age_armes.mp3" type="audio/mpeg">
+		Votre navigateur ne supporte pas l'audio
+	</audio>
+-->
+	
+<!--
+Pour mettre un fichier video on va utiliser la balise video soit avec attribut src
+soit avec la balise source. On va utiliser l'attribut type (video/mp4 ou /webm ou /ogg)
+on va avoir les mêmes attribut que pour audio (controls,...) 	
+-->
+
+	<h1>Sons et vidéos</h1>
+
+	<video src="images_videos_sons/zoro_mihawk.mp4" controls preload="metadata" width="640" heigth="auto" poster="zoro__.png">
+		Votre navigateur ne prend pas en charge la video HTML
+	</video>
+
+	
+</body>
+</html>

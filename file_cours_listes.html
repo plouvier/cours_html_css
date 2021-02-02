@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Listes</title>
+
+</head>
+<body>
+
+
+
+<!-- Liste de base avec des puces -->
+
+<ul>
+	<li> Un première élément</li>
+	<li> Un second élément</li>
+	<li> Un troisième élément</li>
+</ul>
+
+<!--
+il peut y avoir différents attributs (compact et type) mais ils sont obsolète
+
+on peut utiliser la balises <ol> pour ordoner ma liste
+(avec attribut reversed pour avoir un ordre décroissant)
+(l'attribut start permet de démarrer la liste avec autre chose que 1)
+-->
+
+<ol reversed start="4">
+	<li> Un première élément</li>
+	<li> Un second élément</li>
+	<li> Un troisième élément</li>
+</ol>
+
+<!--
+l'attribut type permet de changer le type de numérotation dans la balise ol
+="a" lettre minuscule
+="A" lettre majuscule
+="I" lettre romaine majuscule
+="i" lettre romaine minuscule
+
+la balise <li> peut être utiliser dans les listes ordoner ou non ordoner ainsi que dans des menus (cf autre cours)
+
+pour faire une sous liste il suffit de mettre une balise <ul> ou <ol> dans une balise <li>
+-->
+
+<ul>
+	<li> Un première élément
+		<ol type="I">
+			<li> étape 1</li>
+			<li> étape 2</li>
+			<li> étape 3</li>
+		
+		</ol>
+	</li>
+	<li> Un second élément</li>
+	<li> Un troisième élément</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulaires</title>
+
+</head>
+<body>
+	<form method="post" action="" autocomplete="on">
+		<p><label for="prenm">Nom </label> : <input id="prenom" name="username" placeholder="Entrez votre nom"></p>
+	
+	</form>
+
+<!-- avec la balise form qui permet de faire un formulaire il y a 
+plusieurs attributs d'abord la méthod qui va servir à définir comment 
+les données sont envoyé par défaut "get" les infos vont être dans l'url
+sinon la méthode "post" qui transfert les données avec le formulaire.
+Un deuxième attribut c'est l'action qui coorespond à l'endroit où va attérir
+le résultat. L'attribut name qui est universelle. L'attribut target va
+servir à définirdans quel contexte va être ouvert le formulaire(_top,_parent,_blank).
+Un attribut important est l'autocomplete pour l'autocomplétion (on ou off).
+L'attribut enctype va permettre de définir quel type de fichier est requis,
+utile donc dans les formulaire d'envoie de fichier. L'attribut accept-charset
+qui permet de spécifier plusieur encodage(UTF-8, ISO).
+
+Puis il y a la balise input qui va servir à récupérer les infos donner par 
+l'utilisateur on donnera toujour un nom à chaque input. Avant le input on va utiliser
+une balise label que l'on va lier à input, cela servira notamment à rendre accecible
+le champs de l'input au clavier par l'utilisateur.(il est parfois utile pour
+la mise en page d'entourer chaque input par une balise <p>).
+L'attribut placeholder permet d'écrire un texte indicatif dans le champs mais
+que l'utilisateur n'aura pas à supprimer.
+
+(Le site W3C permet de voir les standards actuelle notamment sur html)
+-->
+
+	<form method="post" action="" autocomplete="on">
+		exemple :<input name="champform" type="text"></p>
+	
+	</form>
+
+<!--
+L'attribut très important est le type du champs de saisie (BEAUCOUP de modalités)
+par defaut l prend la modalité "text" (ce qui va être donné dans le input est un text standard)
+il y a le type "password" qui permet de cacher ce qui est écrit.
+Il y a le type "checkbox" (qui permet de mettre une case optionnellement à cocher)
+on peut utiliser le type "radio" qui oblige un choix attention formulation un peu particuliaire.
+  -->
+	<form method="post" action="" >
+		 Connaissez vous la Jean Guille ?<input name="choice" type="radio" >OUI<input name="choice" type="radio" >NON
+	</form>
+	
+<!-- On peut aussi avoir un champ de type "color" avec l'attribut value="" qui sert 
+à mettre une valeur par defaut--> 
+
+	<form method="post" action="" >
+		 choisissez une couleur<input name="col" type="color" value="AAA5B2">
+	</form>
+	
+	<br>
+
+<!-- on peut avoir un champs de type "date" avec un petit calendrier qui s'affiche
+et il y a aussi le "datetime-local" -->
+
+	<form method="post" action="" >
+		 choisissez une date<input name="date" type="datetime-local">
+	</form>
+	<br>
+<!-- il y a aussi des type comme "email", "tel", "month", "week" ou "search"(qui retire
+les sauts de ligne,..etc), où le champs va s'adapter ou vérifier 
+que les info données sont cohérente. -->
+
+
+	<form method="post" action="" >
+		 entrez votre mail :<input name="mail" type="email">
+	</form>
+	<br>
+	<form method="post" action="" >
+		 entrez votre telephone :<input name="telephone" type="tel">
+	</form>
+	<br>
+	<form method="post" action="" >
+		 month :<input name="mois" type="month">
+	</form>
+	<br>
+	<form method="post" action="" >
+		 recherche :<input name="recherche" type="search">
+	</form>
+	<br>	
+	
+<!-- on peut aussi faire des sorte d'echelle visuel avec le type "range" ou en 
+nombre avec "numérique" -->
+
+	<form method="post" action="" >
+		 level :<input name="level" type="range" min="0" max="100" step="5">
+	</form>
+	<br>	
+
+	<form method="post" action="" >
+		 levle :<input name="level" type="number" value="50" min="0" max="100" step="5">
+	</form>
+	<br>	
+
+<!-- il y a le type "hidden" qui permet de masquer l'affichage du formulaire mais
+attention le formulaire est bien là si on affiche le code source on le voit (pas de MPD
+de cette manière)!
+
+Il y a aussi le type "submit" qui est très important et qui permet de valider notre 
+formulaire. On peut aussi proposer d'effacer avec le type "reset"
+on peut aussi mettre des filtres grace à des expressions rationnelle (regular expression)
+avec l'attribut pattern.
+Attention il faut quand même mettre des vérifications à la récupération car certains utilisateurs
+peuvent changer localement votre code source pour dodge le filtre.
+-->
+
+<!--
+	<form method="post" action="" >
+	
+		identifiant : <input name="id" type="text" pattern="[a-z]">
+		<input name="val" type="submit" value="se connecter">
+		<input name="del" type="reset" value="effacer">
+	</form>
+	<br>
+-->
+	
+<!-- on peut aussi mettre des champs obligatoire avec l'attribut "required"
+mais la encore attention une vérification lors de la récupération devra être faite. -->
+
+<!--	
+	<form method="post" action="" >
+	
+		identifiant : <input name="id" type="text" required>
+		<input name="val" type="submit" value="se connecter">
+		<input name="del" type="reset" value="effacer">
+	</form>
+	<br>
+
+-->
+
+
+<!-- formulaire deuxième partie
+
+on va voir dans un premier temps comment regrouper plusieurs formulaires. Ici la balise fieldset 
+fait le regroupement (visible avec le trait) et l'attribut disabled désactive le groupe de champ.(on ne peut
+plus interagir avec.) On peut aussi utiliser des champs de saisi plus gros pour saisir du texte.
+avec la balise textarea, on peut donner des dimension de l'area avec rows et cols
+on peut fixer c'est dimenson avec wrap="hard"(par defaut à soft). On peut imposer
+un nombre maximal ou minimal de caractère avec minlength et maxlength.
+
+ -->
+
+	<form method="post" id="id_form" action="" >
+		<fieldset form="id_form">
+			<legend>Ma section</legend>
+			<p>Nom : <input name="name_user" type="text" ></p>
+			<p><textarea name="article" rows="10" cols="65" wrap="hard" minlength="10" maxlength="100"></textarea></p>
+			<p><input name="val" type="submit" value="envoyer"></p>
+		</fieldset>
+	</form>
+	<br>
+
+<!-- On peut aussi faire des menues déroulantavec la balise select et les balises options
+on a l'attribut size qui servira à définir le nombre de modalité visible dans le menu
+on pourra aussi utiliser l'attribut value pour définir ce que l'on veut récupérer 
+derrière comme valeur (diff de l'affichage), on peut par ailleur enlever ce qu'il y a
+après value si égal la value (même la balise fermante peut être supp).
+
+-->	
+	
+	<form method="post" id="id_form_" action="" >
+		<fieldset form="id_form_">
+			<legend>Ma section</legend>
+			<select name="choixOS" size="2" form="id_form_">
+				<option value="0">Windows</option>
+				<option value="1">GNU/Linux</option>
+				<option value="2">MacOS</option>
+			</select>	
+			<p><input name="val" type="submit" value="envoyer"></p>
+		</fieldset>
+	</form>
+	<br>
+
+<!--
+on peut donc aussi regrouper des champs de selections avec la balise optgroup
+on peut aussi permettre de selectionner plusieur champs avec l'attribut multiple
+(ici pas très utile), il faudra que l'utilisateur appuis sur contrôle
+(cela change l'affichage le menu n'est plus déroulant)
+on peut aussi desactiver des option toujours avec disabled
+-->	
+
+
+	<form method="post" id="id-form" action="" >
+		<fieldset form="id-form">
+			<legend>Ma section</legend>
+			<select name="choixJeu" form="id-form" multiple>
+				<optgroup label="RPG">
+					<option>Final Fantasy</option>
+					<option>The Legend of Zelda</option>
+				</optgroup>
+				<optgroup label="FPS">
+					<option>CS:GO</option>
+					<option disabled>Fortnite</option>
+				</optgroup>
+
+			</select>	
+			<p><input name="val" type="submit" value="envoyer"></p>
+		</fieldset>
+	</form>
+	<br>
+<!-- on peut aussi utiliser la balise dataliste ( ne fonctionne pas avec safari, les
+utilisateurs de mac qui font toujours les choses différemment vous vous démerderez).
+Celle-ci va servir à proposer un menu déroulant avec lequel l'utilisateur pourra taper
+une réponse même si elle n'est pas dans la liste des modalités proposées.
+-->
+
+	<form method="post" id="id-form" action="" >
+		<fieldset form="id-form">
+			<legend>Ma section</legend>
+			
+			Choisir un jeu : <input list="choixJeu">
+			<datalist id="choixJeu">
+				<option value="CS:GO">
+				<option value="Fortnite">
+				<option value="Call Of">
+			</datalist>
+			
+			<p><input name="val" type="submit" value="envoyer"></p>
+		</fieldset>
+	</form>
+	<br>
+<!-- on va voir maintenant la balise button qui sera très utile couplé avec du javascript 
+pour qu'une fois le boutton cliqué, des actions soit entreprises. Elle va envoyer
+des données sur autrepage.html comme un répertoire.
+-->
+
+	<button formmethod="POST" formaction="autrepage.html" type="submit">Cliquez ici</button>
+	<br>
+
+</body>
+</html>

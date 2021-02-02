@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tableaux</title>
+<!-- cette partie en css n'est la que pour que l'on comprenne mieux les changement
+ne pas s'en occuper -->
+	<style>
+		table{border-collapse:collapse;}
+		th,td{border:1px solid #000;padding:5px;}	
+	</style>
+<!-- fin de la partie en css -->	
+
+</head>
+<body>
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<tr>
+			<td>Colonne 1</td>
+			<td>Colonne 2</td>
+			<td>Colonne 3</td>
+		</tr>
+	</table>
+	<hr>
+
+<!-- La balise <table> pour faire le tableau
+on a la balise facultative <caption> pour avoir un titre au tableau
+on a aussi les balises facultative <thead>, <tbody> et <tfoot> qui servent respectivement
+comme en-tête, corp et pied du tableau.
+on utilise la balise <td> pour une ligne et ensuite imbriqué dedans <td> pour les colonnes
+on peux ici remplacer les <td> par des <th> pour spécifier ces colonnes sont en en-tête -->
+
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Genre</th>
+			<th>Prix</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Assassin's Creed</td>
+			<td>Action-Aventure</td>
+			<td>69.99€</td>
+		</tr>
+		<tr>
+			<td>Rocket League</td>
+			<td>Sport</td>
+			<td>24.99€</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+<!-- on peut par ailleur très bien se faire un tableau à double entré pour cela
+on va remplacer Nom par rien et remplacer les <td>de la première colonne par des <th>.
+Par ailleur, les en-têtes sont en gras par defaut-->
+
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<thead>
+		<tr>
+			<th>/</th>
+			<th>Genre</th>
+			<th>Prix</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Assassin's Creed</th>
+			<td>Action-Aventure</td>
+			<td>69.99€</td>
+		</tr>
+		<tr>
+			<th>Rocket League</th>
+			<td>Sport</td>
+			<td>24.99€</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+<!-- on peut aussi faire une unique cellule prix pour les 2 lignes si c'est le même prix imaginons -->
+
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<thead>
+		<tr>
+			<th>/</th>
+			<th>Genre</th>
+			<th>Prix</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Assassin's Creed</th>
+			<td>Action-Aventure</td>
+			<td rowspan="2">24.99€</td>
+		</tr>
+		<tr>
+			<th>Rocket League</th>
+			<td>Sport</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	
+<!-- on peut aussi faire une cellule d'en-tête pour les 2 dernière colonnes -->
+
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<thead>
+		<tr>
+			<th>/</th>
+			<th colspan ="2">Info</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Assassin's Creed</th>
+			<td>Action-Aventure</td>
+			<td>69.99€</td>
+		</tr>
+		<tr>
+			<th>Rocket League</th>
+			<td>Sport</td>
+			<td>24.99€</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	
+<!-- on peut notamment créer des classes pour chaque colonnes (ou ligne) pour plustard
+appliqué un style en CSS par colonnes (ou ligne) pas visible pour l'instant donc 
+on peut aussi utiliser des abbréviation pour les en-têtes.
+-->
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<colgroup>
+			<col class="stylecol1">
+			<col class="stylecol2et3" span="2">
+		</colgroup>
+		
+		<thead>
+		<tr>
+			<th abbr="Nom">Nom du jeu</th>
+			<th abbr="Genre">Genre et type</th>
+			<th abbr="Prix">Prix de vente</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Assassin's Creed</td>
+			<td>Action-Aventure</td>
+			<td>69.99€</td>
+		</tr>
+		<tr>
+			<td>Rocket League</td>
+			<td>Sport</td>
+			<td>24.99€</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	
+<!--
+on peut aussi mettre des id pour les <th> ce qui est utiliser le plus souvent pour 
+du dynamisme dans le tableau (en java script)(pas utile pour l'instant).
+-->
+
+	<table>
+		<caption> Listing de jeu vidéo</caption>
+		<thead>
+		<tr>
+			<th id="NomJeu">Nom du jeu</th>
+			<th id="GenreJeu">Genre et type</th>
+			<th id="PrixJeu">Prix de vente</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td headers="NomJeu">Assassin's Creed</td>
+			<td headers="GenreJeu">Action-Aventure</td>
+			<td headers="PrixJeu">69.99€</td>
+		</tr>
+		<tr>
+			<td headers="NomJeu">Rocket League</td>
+			<td headers="GenreJeu">Sport</td>
+			<td headers="PrixJeu">24.99€</td>
+		</tr>
+		</tbody>
+	</table>
+
+	
+</body>
+</html>

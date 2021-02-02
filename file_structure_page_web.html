@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>structure pages web</title>
+
+</head>
+<body>
+
+<!-- chaque partie de code entre plusieurs lignes de commentaires est indépendantes
+des autres parties qu'il faudra passer en commentaire -->
+
+<!-- on a déjà la balise <div> qui va nous permettre de diviser notre site en plusieurs
+bloques sinon il y a la balise <span> pour pouvoir modifier un élément dans un texte
+avec du css. C'est 2 balises existaient déjà avant html5. La Balise <div> servira aussi lorsque
+un contenue ne semble avoir aucune balise dans laquel le ranger.
+-->
+
+
+
+	<div>
+		<p>
+		Une figure fractale est un objet <span>mathématique qui présente une structure similaire</span> à toutes les échelles.
+		C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+		En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+		Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+		</p>
+	</div>
+
+	<div>
+		<p>
+		Une figure fractale est un objet mathématique qui présente une structure similaire à toutes les échelles.
+		C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+		En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+		Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+		</p>
+		
+		<p>
+		Une figure fractale est un objet mathématique qui présente une structure similaire à toutes les échelles.
+		C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+		En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+		Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+		</p>
+		
+		<p><a href="url.fr"> truc</a></p>
+	
+	</div>
+
+
+<!--
+on va avoir maintenant la balise <main>, il ne doit y avoir qu'une balise main visible
+par page, c'est ce qui coorespondra à la partie principal de votre page.
+on a aussi la balise section va servir à sectionner une page. Une section a 
+par principe un titre. 
+
+Si vous voulez mettre dans votre site un contenue qui pourrais être distribuer en dehor
+de votre site (indépendant de votre site) vous utiliserez la balise <article>.
+-->
+
+	<h1> Titre de la page</h1>
+	<section>
+		<h1>Mon titre de section</h1>
+		<p>
+		Une figure fractale est un objet mathématique qui présente une structure similaire à toutes les échelles.
+		C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+		En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+		Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+		</p>
+	</section>
+	
+	<section>
+		<h1>Mon titre d'une autre section</h1>
+		<p>
+		Une figure fractale est un objet mathématique qui présente une structure similaire à toutes les échelles.
+		C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+		En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+		Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+		</p>
+	</section>
+	
+	<article>
+		<p>
+		Une figure fractale est un objet mathématique qui présente une structure similaire à toutes les échelles.
+		C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+		En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+		Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+		</p>
+	</article>
+
+<!--
+La balise <header> est la pour servir d'en-tête, ça peut être en-tête du site
+avec le titre du site dedans mais ça peut aussi être l'en-tête d'un article
+il y a aussi la balise footer qui va servir de pied de contenue
+
+-->
+
+	<header>
+		<h1> Mon site</h1>
+	</header>
+
+	<article>
+		<header>
+			<h2> Mon titre d'article</h2>
+		</header>
+		<p>Le contenue de l'article ...</p>
+		<footer>
+			<p>
+			Ce contenue est rédiger par
+				<address>
+					Lucas Plouvier<br>
+					Data Scientist<br>
+				</address>
+			</p>
+		</footer>
+	</article>
+	<footer>
+		<p> Copyright &copy; 2021</p>
+	</footer>
+
+<!--
+On peut aussi avoir la balise <nav> qui va contenir un menue de navigation pour
+naviguer sur votre site ou juste sur votre page.
+
+-->
+
+	<header>
+		<h1> Mon site</h1>
+	</header>
+
+<!-- liste nav du site -->
+	<nav>
+		<ul>
+			<li><a href="#">Accueil</a></li>
+			<li><a href="#">Qui Somme Nous</a></li>		
+			<li><a href="#">FAQ</a></li>		
+			<li><a href="#">Contactez nous</a></li>		
+		</ul>
+	
+	</nav>
+
+<!-- liste nav de la page -->	
+	<section>
+		<nav>
+			<ul>
+				<li><a href="#">Présentation</a></li>
+				<li><a href="#">Article</a></li>		
+				<li><a href="#">Forum</a></li>		
+				<li><a href="#">Adress</a></li>		
+			</ul>
+		</nav>	
+	</section>
+	
+	
+	<article>
+		<header>
+			<h2> Mon titre d'article</h2>
+		</header>
+		<p>Le contenue de l'article ...</p>
+		<footer>
+			<p>
+			Ce contenue est rédiger par
+				<address>
+					Lucas Plouvier<br>
+					Data Scientist<br>
+				</address>
+			</p>
+		</footer>
+	</article>
+	<footer>
+		<p> Copyright &copy; 2021</p>
+	</footer>
+
+<!-- 
+si vous voullez ajouter une partie qui n'est pas vraiment lié au reste de votre page
+(des infos facultative, un button de don ...)
+on utilisera la balise aside
+-->
+	<aside>
+		<p> PS : Vive Moi</p>
+	</aside>
+</body>
+</html>

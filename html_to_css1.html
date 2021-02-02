@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--
+La première manière de lier le css à notre ficher html est avec une balise <link>
+dans laquelle on rajoutera l'attribut href avec le nom du fichier css.
+-->
+	<meta charset="utf-8">
+	<title>Intro_design</title>
+	<!--
+	<link rel="stylesheet" href="normalize.css"> (chargement du fichier "reset")
+	-->
+	<link rel="stylesheet" href="CSS/file_intro_design.css">
+<!--
+La deuxième manière est de rajouter dans la balise head, la balise <style> dans laquelle
+on mettra notre code css (pas recommandé du tout)
+-->
+	
+	<style>
+	/* un commentair en css*/
+	</style>
+
+<!--
+Une troisième manière (fortement déconseillé) est d'appliqué du css avec un attribut 
+style dans une balise.
+-->	
+
+
+</head>
+<body>
+	<div id="block">
+		bla bla bla ...
+	</div>
+	<p style=""> 
+	Une figure <span class="text-red">fractale</span> est un objet mathématique qui présente une structure similaire à toutes les échelles.
+C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+<span class="text-red">En zoomant sur une partie de la figure</span>, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.
+	</p>
+
+	<span class="text-red">Un autre texte</span>
+	
+
+		<p title="attrib">Un autre texte</p>
+
+</body>
+</html>

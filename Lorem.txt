@@ -1,0 +1,4 @@
+Une figure fractale est un objet mathématique qui présente une structure similaire à toutes les échelles.
+C'est un objet géométrique « infiniment morcelé » dont des détails sont observables à une échelle arbitrairement choisie.
+En zoomant sur une partie de la figure, il est possible de retrouver toute la figure ; on dit alors qu’elle est « auto similaire ».
+Bien qu'un certain nombre de choses était déjà connu auparavant, on attribue la découverte des fractales à Benoît Mandelbrot.

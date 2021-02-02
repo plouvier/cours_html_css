@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>images</title>
+
+</head>
+<body>
+
+<!-- pour le nom des images on préférera ne pas utiliser d'espace
+ni de caractères spéciaux. On utilisera la balise orpheline <img> 
+On peut fournir le chemin relatif ou le chemin absolue.
+On va utiliser des attributs pour les personnes handicapé ou
+qui utilise des navigateur textuelle (en ligne de commande). On utilise
+l'attribut alt (pour rendre l'image moins importante) qui va être un texte 
+alternatif à l'image. On a l'attribut width qui va permettre de définir une 
+largeur d'affichage (cela n'allège pas le chargemrnt des pages). On peut gérer 
+la hauteur d'affichage avec l'attribut height (on peut mettre "auto"
+pour éviter les déformation). Dans ce cas il faut des pixels, pas des pourcentage.
+Si on a une image très importante mais longue à décrire on utilise l'attribut
+longdesc auquel on peut donner une url (ce n'est pas un lien)ou
+un identifiant d'un autre élément de votre site.
+On peut aussi rajouter une légende (credit, source, légende) en mettantl'image dans un ensemble de figures
+avec la balise <figcaption><figcaption>
+-->
+<!--
+	<h1>Images et figures</h1>
+	
+	<img src="tsuyu.png" alt="Texte alternatif à l'image" width="400">
+	<figcaption>Crédit: Moi<figcaption>
+	
+-->
+	
+	
+	
+
+<!-- 	
+on va pouvoir aussi définir des zone clicable sur notre image, pour cela on va
+va utiliser la balise <map> dans laquelle on va utiliser la balise area avec l'attribut
+shape pour définir la forme de notre zone (rect,circle or poly) et coords pour donner
+les coordonnées.
+Si c'est rect on va avoir x1,y1 x2,y2 (en haut à gauche en bas à droite)
+Si c'est circle on va avoir x, y, r (centre du cercle et rayon)
+Si c'est poly on va avoir x1,y1 x2,y2 ... (premier sommet, deuxième sommet ...)
+
+!Attention les coordonnées doivent être proportionnées aux width et height
+que vous avez données avant.
+
+-->	
+
+
+
+	<h1>Images et figures</h1>
+	
+	<img usemap="#tsun" src="images_videos_sons/zoro2.png" alt="Texte alternatif à l'image" width="400">
+	<map name="tsun">
+		<area href="zoro.png" shape="rect" coords="131,54 190,118">
+		<area href="images_videos_sons/victime.png" shape="rect" coords=" 246,68 400,213">
+	</map>
+
+	
+	
+<!--
+il existe une balise picture qui est un peu particulière qui fonctionne avec la balise
+source qui se sert de l'attribut media qui permet de faire des requettes complexes
+au niveau de la selection de différent paramètres(en fonction du type (écran,imprimante),
+en fonction des résolutions, en fonction de la densité de pixels,
+en fonction de l'orientation de l'écran).
+En gros on va afficher soit l'image dans la balise <img> soit celle dans <source> en
+fonction de ce qui est mis dans média
+ici il affichera l'image dans source si la largeur de la fenêtre du navigateur
+fait moins de 800px
+-->
+
+
+	<h1>Images et figures</h1>
+	<picture>
+	<source srcset="images_videos_sons/Escanor.png" media="(max-width:800px)" width="400">
+	<img src="images_videos_sons/tsuyu.jpg" alt="Texte alternatif à l'image">
+
+	</picture>
+
+</body>
+</html>
